@@ -1,0 +1,18 @@
+[[source]]
+name = "pypi"
+url = "http://pypi.douban.com/simple/"
+verify_ssl = false
+
+[dev-packages]
+
+[packages]
+numpy = "*"
+opencv-python = "*"
+requests = "*"
+cryptography = "*"
+pyopenssl = "*"
+certifi = "*"
+alchemy = "*"
+
+[requires]
+python_version = "3.7"
