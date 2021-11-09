@@ -4,6 +4,7 @@ url = "http://pypi.douban.com/simple/"
 verify_ssl = false
 
 [dev-packages]
+yapf = "*"
 
 [packages]
 numpy = "*"
