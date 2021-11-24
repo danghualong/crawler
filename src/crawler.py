@@ -17,7 +17,7 @@ class Crawler(object):
         encs = requests.utils.get_encodings_from_content(resp.text)
         if (len(encs) > 0):
             charset = encs[0]
-        print(encs)
+        # print(encs)
         resp.encoding = charset
         return resp.text
 
