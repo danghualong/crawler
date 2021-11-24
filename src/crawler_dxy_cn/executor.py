@@ -37,18 +37,15 @@ for  name_url in urls:
         for drug in drugs:
             drug_url=drug[0]
             drug_name=drug[1]
-            n=drug_name.index("<")
-            abbr_name=drug_name
-            if n>0:
-                abbr_name=drug_name[:n]
+            drug_name=drug_name.replace("<!-- --> - <!-- -->","_")
             detailText=crawler.request(urlPrefix+drug_url,"get")
             detail=re.findall(r'<div class="container-middle">(.*?)<div class="container-right">', detailText, re.S)
             
             if(len(detail)>0):
                 try:
-                    FileUtil.writeFile("D:\\drugs\\{0}\\".format(cat_name),abbr_name+".txt",detail[0])
+                    FileUtil.writeFile("D:\\drugs\\{0}\\".format(cat_name),drug_name+".txt",detail[0])
                 except  Exception as e:
-                    print(e)
+                    print(drug_name,":",e)
             else:
                 print("xxxx NoContent ----{0}--------{1}".format(drug_name,drug_url))
         
