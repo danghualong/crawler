@@ -15,6 +15,7 @@ pyopenssl = "*"
 certifi = "*"
 alchemy = "*"
 flake8 = "*"
+beautifulsoup4 = "*"
 
 [requires]
 python_version = "3.8"
