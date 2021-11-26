@@ -1,6 +1,4 @@
 import sys
-# from os import path
-# pathname = path.dirname(path.dirname(path.abspath(__file__)))
 sys.path.append(".")
 
 import re
@@ -36,6 +34,5 @@ def handleFiles(filePath,resultPath):
           handleFile(tmpdir,resultPath,s)
 
 if __name__=="__main__":
-    handleFiles("D:\\drugs3","d:\\drugs")
-
+    # handleFiles("D:\\drugs3","d:\\drugs")
     # handleFile("D:\\drugs2\\ABC\\感冒胶囊.txt","D:\\drugs2\\ABC\\感冒胶囊F.txt")
