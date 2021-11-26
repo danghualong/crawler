@@ -64,6 +64,7 @@ def parseDrugList(drugsText):
 def crawelDrug(drug_name,drug_url,cat_name):
     detailText=crawler.request(drug_url+'manual',"get")
     details=parseDetailText(detailText)
+    drug_name=drug_name.replace(" ","_")
     if(len(details)>0 and len(details[0])>0):
         try:
             FileUtil.writeFile("D:\\drugs3\\{0}\\".format(cat_name),drug_name+".txt",details[0])

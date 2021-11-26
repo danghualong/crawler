@@ -11,7 +11,7 @@ def handleFile(filePath,newFilePath,fileName):
     content=content.replace("\n","")
     content=re.sub("\s{2,}",'',content)
     content=content.replace("</p>","\n")
-    content=content.replace("<br />","\n")
+    content=re.sub("<br.*?/>","\n",content)
     content=re.sub('<.*?>','',content)
     FileUtil.writeFile(newFilePath,fileName,content)
     # if(not os.path.exists(newFilePath)):
@@ -33,6 +33,6 @@ def handleFiles(filePath,resultPath):
           s=s.replace(".txt",".docx")
           handleFile(tmpdir,resultPath,s)
 
+
 if __name__=="__main__":
-    # handleFiles("D:\\drugs3","d:\\drugs")
-    # handleFile("D:\\drugs2\\ABC\\感冒胶囊.txt","D:\\drugs2\\ABC\\感冒胶囊F.txt")
+    handleFiles("D:\\drugs4","d:\\drugs5")
