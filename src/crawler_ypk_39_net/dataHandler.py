@@ -34,7 +34,5 @@ def handleFiles(filePath,resultPath):
           handleFile(tmpdir,resultPath,s)
 
 
-
-
 if __name__=="__main__":
     handleFiles("D:\\drugs4","d:\\drugs5")
