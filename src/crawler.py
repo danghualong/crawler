@@ -28,7 +28,7 @@ class Crawler(object):
         resp = requests.request(url=url,
                                 method=method,
                                 headers=self.headers,
-                                data=data)
+                                data=data,verify=False)
         result = self._decodeContent(resp)
         return result
 
@@ -37,6 +37,13 @@ class Crawler(object):
         获取Json内容
         '''
         text = self.request(url, 'get', data)
+        return json.loads(text)
+
+    def postJson(self, url, data):
+        '''
+        获取Json内容
+        '''
+        text = self.request(url, 'post', data)
         return json.loads(text)
 
     def downloadFile(self, url):
